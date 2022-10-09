@@ -1,11 +1,9 @@
 import Header from "./components/Header/Header";
 import { Outlet, Link } from "react-router-dom";
-// import { useDispatch, useSelector } from "react-redux";
-
+import { useSelector } from "react-redux";
 import "./App.scss";
 const App = () => {
-  // const count = useSelector((state) => state.counter.count);
-  // const dispatch = useDispatch();
+  const count = useSelector((state) => state.counter.count);
   return (
     <div className="app-container">
       <div className="header-container">

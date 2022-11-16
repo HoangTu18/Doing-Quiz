@@ -7,6 +7,7 @@ import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { doLogin } from "../../redux/action/userAction";
 import { ImSpinner10 } from "react-icons/im";
+import Language from "../Header/Language";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -33,18 +34,18 @@ const Login = () => {
     }
     setIsLoading(true);
     // submit apis
-  //   let data = await postLogin(email, password);
-  //   if (data && data.EC === 0) {
-  //     dispatch(doLogin(data));
-  //     toast.success(data.EM);
-  //     setIsLoading(false);
-  //     navigate("/");
-  //   }
-  //   if (data && +data.EC !== 0) {
-  //     toast.error(data.EM);
-  //     setIsLoading(false);
-  //   }
-  // };
+    let data = await postLogin(email, password);
+    if (data && data.EC === 0) {
+      dispatch(doLogin(data));
+      toast.success(data.EM);
+      setIsLoading(false);
+      navigate("/");
+    }
+    if (data && +data.EC !== 0) {
+      toast.error(data.EM);
+      setIsLoading(false);
+    }
+  };
 
   const handleKeyDown = (e) => {
     if (e && e.key === "Enter") {
@@ -56,8 +57,9 @@ const Login = () => {
       <div className="header">
         <span>Don't have an account yet?</span>
         <button onClick={() => navigate("/register")}>Sign up</button>
+        {/* <Language /> */}
       </div>
-      <div className="title col-4 mx-auto">HoiDanIT &amp; HT</div>
+      <div className="title col-4 mx-auto">HT Quizzes</div>
       <div className="welcome col-4 mx-auto">Hello, Who's this?</div>
       <div className="content-form col-4 mx-auto">
         <div className="form-group">

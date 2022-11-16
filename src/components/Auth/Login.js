@@ -57,9 +57,9 @@ const Login = () => {
       <div className="header">
         <span>Don't have an account yet?</span>
         <button onClick={() => navigate("/register")}>Sign up</button>
-        <Language />
+        {/* <Language /> */}
       </div>
-      <div className="title col-4 mx-auto">HoiDanIT &amp; HT</div>
+      <div className="title col-4 mx-auto">HT Quizzes</div>
       <div className="welcome col-4 mx-auto">Hello, Who's this?</div>
       <div className="content-form col-4 mx-auto">
         <div className="form-group">
@@ -89,7 +89,7 @@ const Login = () => {
             onClick={() => handleLogin()}
           >
             {isLoading === true && <ImSpinner10 className="loader-icon" />}
-            <span>Login to HoiDanIT</span>
+            <span>Login to HT Quizzes</span>
           </button>
         </div>
         <div className="text-center">
